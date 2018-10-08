@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
     "test": "jest"
   },
   "dependencies": {
@@ -20,6 +21,7 @@
     "husky": "^1.1.1",
     "jest": "^23.6.0",
     "nodemon": "^1.18.4",
+    "now": "^11.4.6",
     "prettier": "^1.14.3",
     "pretty-quick": "^1.7.0"
   },
