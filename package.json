@@ -10,7 +10,8 @@
     "apollo-datasource": "latest",
     "apollo-datasource-rest": "latest",
     "apollo-engine": "latest",
-    "apollo-server": "latest",
+    "apollo-server": "^2.2.0-register.2195",
+    "apollo-server-plugin-operation-registry": "0.1.0-register.2195",
     "dotenv": "^5.0.1",
     "graphql": "latest",
     "isemail": "^3.1.2",
@@ -18,6 +19,7 @@
     "sqlite3": "^4.0.2"
   },
   "devDependencies": {
+    "apollo": "^1.10.0-alpha.9",
     "husky": "^1.1.1",
     "jest": "^23.6.0",
     "nodemon": "^1.18.4",
