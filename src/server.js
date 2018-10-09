@@ -10,6 +10,8 @@ const resolvers = require('./resolvers');
 const MovieDataSource = require('./data-sources/movie');
 const LikesDataSource = require('./data-sources/likes');
 
+const isProd = process.env.NODE_ENV === 'production';
+
 // Set up Apollo Server
 const server = new ApolloServer({
   typeDefs,
@@ -29,7 +31,7 @@ const server = new ApolloServer({
   engine: process.env.ENGINE_API_KEY
     ? { apiKey: process.env.ENGINE_API_KEY }
     : false,
-  plugins: [new OperationRegistry()],
+  plugins: isProd ? [new OperationRegistry()] : [],
 });
 
 // Start our server
