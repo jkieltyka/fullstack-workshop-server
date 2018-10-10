@@ -30,6 +30,6 @@ jobs:
       # When running on the 'master' branch, publish the latest version
       # of the schema to Apollo Engine.
       - run: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
+          if [ "${CIRCLE_BRANCH}" == "jbaxleyiii/operation-registry" ]; then
             npx apollo schema:publish
           fi
