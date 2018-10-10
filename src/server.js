@@ -7,10 +7,13 @@ const OperationRegistry = require('apollo-server-plugin-operation-registry')
 
 const typeDefs = require('./schema');
 const resolvers = require('./resolvers');
+const { createStore } = require('./utils');
 const MovieDataSource = require('./data-sources/movie');
 const LikesDataSource = require('./data-sources/likes');
 
 const isProd = process.env.NODE_ENV === 'production';
+
+const store = createStore();
 
 // Set up Apollo Server
 const server = new ApolloServer({
@@ -25,7 +28,7 @@ const server = new ApolloServer({
   },
   dataSources: () => ({
     moviesAPI: new MovieDataSource(),
-    likesAPI: new LikesDataSource(),
+    likesAPI: new LikesDataSource({ store }),
   }),
   tracing: true,
   engine: process.env.ENGINE_API_KEY
