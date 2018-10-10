@@ -50,6 +50,8 @@ const createStore = () => {
     user: Sequelize.STRING,
     movie: Sequelize.STRING,
   });
+  
+  likes.sync({ alter: true, force: true });
 
   return { likes };
 };
