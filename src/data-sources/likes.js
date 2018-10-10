@@ -32,7 +32,7 @@ const createStore = () => {
   const sequelize = new Sequelize('database', 'username', 'password', {
     dialect: 'sqlite',
     logging: false,
-    storage: './.store.sqlite',
+    // storage: './.store.sqlite',
     operatorsAliases: false,
   });
 
