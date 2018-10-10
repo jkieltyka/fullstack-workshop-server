@@ -36,7 +36,7 @@ const createStore = () => {
     operatorsAliases: false,
   });
 
-  const CREATE_LIKES_QUERY = `CREATE TABLE IF NOT EXISTS likes(
+  const CREATE_LIKES_QUERY = `CREATE TABLE likes(
     id INTEGER PRIMARY KEY,
     createdAt DATETIME,
     updatedAt DATETIME,
