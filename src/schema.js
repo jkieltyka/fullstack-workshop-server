@@ -51,7 +51,7 @@ module.exports = `
     id: ID
     title: String
     overview: String
-    score: Float
+    score: Float @deprecated(reason: "This isn't valuable")
     voteCount: Int
     popularity: Float
     poster(size: Int): String
