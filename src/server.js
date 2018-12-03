@@ -27,6 +27,4 @@ const server = new ApolloServer({
 });
 
 // Start our server
-server
-  .listen({ port: 3000 })
-  .then(({ url }) => console.log(`🚀 app running at ${url}`));
+server.listen().then(({ url }) => console.log(`🚀 app running at ${url}`));
