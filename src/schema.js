@@ -59,11 +59,10 @@ module.exports = `
     releaseDate: String
     cast: [Cast]!
     isLiked: Boolean
-    runtime: Int
+    runtime: Int @deprecated(reason: "Runtime no longer in use.")
   }
 
-
-  type Cast @cacheControl(maxAge: 600) {
+  type Cast {
     id: ID
     name: String!
     photo(size: Int): String
