@@ -23,7 +23,6 @@ const server = new ApolloServer({
     moviesAPI: new MovieDataSource(),
     likesAPI: new LikesDataSource(),
   }),
-  engine: { apiKey: process.env.ENGINE_API_KEY },
 });
 
 // Start our server
