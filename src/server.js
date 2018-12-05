@@ -9,7 +9,7 @@ const resolvers = require('./resolvers');
 // Set up Apollo Server
 const server = new ApolloServer({
   typeDefs,
-  resolvers,
+  // resolvers,
 });
 
 // Start our server
