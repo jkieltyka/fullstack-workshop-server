@@ -25,14 +25,9 @@ class MoviesAPI extends RESTDataSource {
     request.params.set('include_adult', false);
   }
 
-  async getCastByMovie(id) {
-    const res = await this.get(`/movie/${id}/credits`);
-    return res ? res.cast : [];
-  }
+  getCastByMovie(id) {}
 
-  getMovieById(id) {
-    return this.get(`movie/${id}`);
-  }
+  getMovieById(id) {}
 
   async getMovies({ sort, page }) {
     let sortParam = null;
