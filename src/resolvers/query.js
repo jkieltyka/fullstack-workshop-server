@@ -10,19 +10,13 @@ Hint: Only authenticated users can like movies. You will need to access the user
 
 module.exports = {
   Query: {
-    movie: (root, { id }, { dataSources }) =>
-      dataSources.moviesAPI.getMovieById(id),
+    movie: () => {},
     movies: (root, { sort, page = 1 }, { dataSources }) => {
       // API restriction
       if (page > 1000)
         throw new Error('Page must be less than or equal to 1000');
       return dataSources.moviesAPI.getMovies({ sort, page });
     },
-    likes: async (root, args, { user, dataSources }) => {
-      const likes = await dataSources.likesAPI.getMovieLikes({ user });
-      return likes.map(({ movie }) =>
-        dataSources.moviesAPI.getMovieById(movie)
-      );
-    },
+    likes: () => {},
   },
 };

@@ -11,11 +11,7 @@ Try throwing an error if the user is not logged in!
 
 module.exports = {
   Mutation: {
-    toggleLike: async (root, { id }, { user, dataSources }) => {
-      if (!user) throw new Error('You must be logged in to do this');
-      await dataSources.likesAPI.toggleMovieLike({ id, user });
-      return dataSources.moviesAPI.getMovieById(id);
-    },
+    toggleLike: () => {},
     login: (_, { email }) => new Buffer(email).toString('base64'),
   },
 };
