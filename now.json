@@ -1,3 +1,6 @@
 {
-  "dotenv": ".env"
+  "name": "workshop-server",
+  "env": {
+    "ENGINE_API_KEY": "@engine-api-key"
+  }
 }
