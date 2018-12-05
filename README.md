@@ -2,16 +2,14 @@
 
 Welcome to the server portion of the workshop! For the morning session, we will be building a GraphQL server based on the [Movie DB REST API](https://developers.themoviedb.org/3/getting-started/introduction).
 
-## File Structure (in order of importance):
+### File Structure (in order of importance):
+
 - `server.js`: Where all the magic happens to set up Apollo Server
 - `schema.js`: Your GraphQL schema goes here
 - `resolvers/`: Write your resolvers for each type in this folder
-- `models/`: Your models separate out the data fetching logic from your resolvers
-- `loaders.js`: We've already created a loader function for you here. You won't need to modify this file.
-- `utils.js`: A utility function for constructing query parameters. You won't need to modify this file.
-- `store.js`: A SQLite DB created with the Sequelize ORM for storing likes and user info. You won't need to modify this file.
+- `data-sources/`: Your data sources separate out the data fetching logic from your resolvers
 
-## Running on Glitch
+### Running on Glitch
 
 <!-- Remix Button -->
 <a href="https://glitch.com/edit/#!/remix/fullstack-workshop-server">
@@ -20,7 +18,7 @@ Welcome to the server portion of the workshop! For the morning session, we will 
 
 1. Click this button to remix the project
 
-2. On the left hand menu in Glitch, click Logs > Console
+2. On the left hand menu in Glitch, click Status > Console
 
 3. Confirm you're tracking origin by running `git remote -v`. If you are, then you can skip step #4 and go to step #5
 
@@ -35,13 +33,16 @@ git remote add origin https://github.com/apollographql/fullstack-workshop-server
 6. Navigate to `server.js`. You should not see any `ApolloServer` setup code. If that's the case, then you're good to go!
 
 ### Branches
-- `00-start`: Your starting point
-- `01-apollo-server`: Setting up Apollo Server and Apollo Engine
-- `02-schema`: Writing your schema
-- `03-resolvers`: Implementing resolvers
-- `04-final`: Includes authentication, loaders, and caching
 
-## FAQ
+- `00-start`: Your starting point
+- `01-apollo-server`: Setting up Apollo Server
+- `02-schema`: Writing your schema
+- `03-data-sources`: Building data sources
+- `04-authentication`: Implementing authentication
+- `05-final`: Hooking everything up to resolvers
+
+### FAQ
+
 - **I didn't complete the last exercise and want to catch up**: No worries! I've created branches for all the steps in the workshop so everyone can go at their own pace. To check out the completed solution for your exercise, look for the branch above. In your Glitch terminal or local terminal, replace `01-apollo-server` with the exercise you're on:
 
 ```bash
@@ -49,13 +50,12 @@ git stash
 git checkout 01-apollo-server
 ```
 
-- **I'm getting errors related to the Engine proxy:** You need to make a .env file in the root that contains `ENGINE_API_KEY=yourkeyhere`. Replace yourkeyhere with the Engine key you get from [creating your own service](https://engine.apollographql.com/).
+### Helpful links
 
-## Helpful links
-- [graphql.org docs](http://graphql.org/learn/schema/)
+- [Apollo platform docs](https://www.apollographql.com/docs/)
+- [Writing a schema](https://www.apollographql.com/docs/apollo-server/essentials/schema.html)
 - [Learn about resolvers here](https://www.apollographql.com/docs/graphql-tools/resolvers.html)
-- [Apollo Engine docs](https://www.apollographql.com/docs/engine/)
-- [DataLoader](https://www.apollographql.com/docs/graphql-tools/connectors.html#dataloader)
+- [Data sources docs](https://www.apollographql.com/docs/apollo-server/features/data-sources.html)
 
 ## Running locally
 
