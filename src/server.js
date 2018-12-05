@@ -12,13 +12,6 @@ const LikesDataSource = require('./data-sources/likes');
 const server = new ApolloServer({
   typeDefs,
   resolvers,
-  context: ({ req }) => {
-    // simple auth check on every request
-    const auth = (req.headers && req.headers.authorization) || '';
-    const email = new Buffer(auth, 'base64').toString('ascii');
-
-    return { user: isEmail.validate(email) ? email : null };
-  },
   dataSources: () => ({
     moviesAPI: new MovieDataSource(),
     likesAPI: new LikesDataSource(),
