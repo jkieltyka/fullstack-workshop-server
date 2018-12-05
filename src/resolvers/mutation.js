@@ -3,13 +3,10 @@
 Remember the resolver function signature:
 fieldName: (obj, args, context, info) => result;
 
-Check data-sources/movie for the data fetching functions you'll need to complete the exercise.
-Refer to your schema if you're unsure what to return from the resolvers.
-
-For toggleLike, only authenticated users can toggle a like. Try grabbing the user
-off the context and throw an error if there is no user.
-
-Good luck!
+You will need to implement the resolver for Mutation.toggleLike.
+Check the data sources for the data fetching functions you'll need to complete the exercise.
+Hint: Only authenticated users can like movies. You will need to access the user from somewhere in your resolver.
+Try throwing an error if the user is not logged in!
 */
 
 module.exports = {

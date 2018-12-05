@@ -1,3 +1,15 @@
+/* TODO: Fill in the remaining data source methods.
+
+You will need to fill in getMovieById and getCastByMovie.
+Use the data source's fetching method (this.get) to query the REST API.
+
+To get a movie, you will want to use the resource `movie/${id}`.
+
+To get a movie's cast, you will want to use the resource `/movie/${id}/credits`.
+The response from the cast endpoint has a cast property on the response.
+Remember to pay attention to nullability (hint: check the schema)!
+*/
+
 const { RESTDataSource } = require('apollo-datasource-rest');
 
 class MoviesAPI extends RESTDataSource {
@@ -18,7 +30,7 @@ class MoviesAPI extends RESTDataSource {
     return res ? res.cast : [];
   }
 
-  async getMovieById(id) {
+  getMovieById(id) {
     return this.get(`movie/${id}`);
   }
 

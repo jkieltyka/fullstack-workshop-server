@@ -3,9 +3,9 @@
 Remember the resolver function signature:
 fieldName: (obj, args, context, info) => result;
 
-Check data-sources/movie for the data fetching functions you'll need to complete the exercise.
-Refer to your schema if you're unsure what to return from the resolvers.
-Good luck!
+You will need to implement resolvers for Query.movie and Query.likes.
+Check the data sources for the data fetching functions you'll need to complete the exercise.
+Hint: Only authenticated users can like movies. You will need to access the user from somewhere in your resolver.
 */
 
 module.exports = {
@@ -21,7 +21,7 @@ module.exports = {
     likes: async (root, args, { user, dataSources }) => {
       const likes = await dataSources.likesAPI.getMovieLikes({ user });
       return likes.map(({ movie }) =>
-        dataSources.moviesAPI.getMovieById(movie),
+        dataSources.moviesAPI.getMovieById(movie)
       );
     },
   },
