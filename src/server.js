@@ -15,7 +15,7 @@ const server = new ApolloServer({
   context: ({ req }) => {
     // simple auth check on every request
     const auth = (req.headers && req.headers.authorization) || '';
-    const email = new Buffer(auth, 'base64').toString('ascii');
+    const email = Buffer.from(auth, 'base64').toString();
 
     return { user: isEmail.validate(email) ? email : null };
   },
