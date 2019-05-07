@@ -54,13 +54,10 @@ describe('MoviesAPI', () => {
 
     // these check the args that moviesAPI.get was called with.
     // we're checking the _second_ argument of each call
-    expect(moviesAPI.get.mock.calls[0][1].params.sort_by).toEqual(null);
-    expect(moviesAPI.get.mock.calls[1][1].params.sort_by).toEqual(
-      'popularity.desc',
-    );
-    expect(moviesAPI.get.mock.calls[2][1].params.sort_by).toEqual(
-      'release_date.desc',
-    );
+
+    expect(moviesAPI.get.mock.calls[0][1].sort_by).toEqual(null);
+    expect(moviesAPI.get.mock.calls[1][1].sort_by).toEqual('popularity.desc');
+    expect(moviesAPI.get.mock.calls[2][1].sort_by).toEqual('release_date.desc');
   });
 
   it('[getMovies] passes page param', async () => {
@@ -69,7 +66,7 @@ describe('MoviesAPI', () => {
 
     // these check the args that moviesAPI.get was called with.
     // we're checking the _second_ argument of each call
-    expect(moviesAPI.get.mock.calls[0][1].params.page).toEqual(123);
+    expect(moviesAPI.get.mock.calls[0][1].page).toEqual(123);
   });
 
   it('[getMovies] returns empty array if no api response', async () => {
