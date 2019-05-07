@@ -40,7 +40,8 @@ class MoviesAPI extends RESTDataSource {
     else if (sort === 'RELEASE_DATE') sortParam = 'release_date.desc';
 
     const res = await this.get('/discover/movie', {
-      params: { page, sort_by: sortParam },
+      page,
+      sort_by: sortParam,
     });
 
     return res ? res.results : [];
