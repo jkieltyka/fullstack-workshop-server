@@ -16,6 +16,6 @@ module.exports = {
       await dataSources.likesAPI.toggleMovieLike({ id, user });
       return dataSources.moviesAPI.getMovieById(id);
     },
-    login: (_, { email }) => new Buffer(email).toString('base64'),
+    login: (_, { email }) => Buffer.from(email, 'base64').toString(),
   },
 };
