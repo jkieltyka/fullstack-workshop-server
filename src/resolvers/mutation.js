@@ -11,7 +11,7 @@ Try throwing an error if the user is not logged in!
 
 module.exports = {
   Mutation: {
-    toggleLike: () => {},
+    toggleLike: () => null,
     login: (_, { email }) => Buffer.from(email).toString('base64'),
   },
 };

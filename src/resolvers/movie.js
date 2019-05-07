@@ -16,7 +16,7 @@ module.exports = {
       poster_path && `https://image.tmdb.org/t/p/w${size}${poster_path}`,
     genres: ({ genres }) => (genres ? genres.map(g => g.name) : []),
     releaseDate: ({ release_date }) => release_date,
-    cast: () => {},
-    isLiked: () => {},
+    cast: () => null,
+    isLiked: () => null,
   },
 };
